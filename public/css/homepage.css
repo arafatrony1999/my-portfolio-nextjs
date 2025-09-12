@@ -1,0 +1,665 @@
+.homepage{
+    width: 100vw;
+}
+.min-height{
+    min-height: calc(100vh - 150px);
+}
+.page-title{
+    padding-top: 40px;
+    background: #F8F8F8;
+}
+.page-title div{
+    font-size: 6vw;
+    color: black;
+    font-weight: bolder;
+}
+.colored-text{
+    margin-left: 16px;
+    border-bottom: 8px solid #F06233;
+}
+.homepage-intro-container{
+    background: rgb(248, 248, 248);
+    width: 100%;
+    padding: 20px 0;
+}
+.homepage-intro{
+    width: 75%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background: white;
+    margin: auto;
+    display: flex;
+    padding: 20px;
+}
+.intro-image{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.homepage-intro img{
+    width: 50%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.homepage-intro p{
+    width: 75%;
+    font-size: 18px;
+    text-align: justify;
+}
+.intro-carousel{
+    max-width: 100%;
+    background: rgb(248, 248, 248);
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+}
+
+.intro-btns{
+    width: 100%;
+    background: rgb(248, 248, 248);
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+.intro-btns a{
+    margin: 10px;
+}
+.intro-btns button{
+    margin: 10px;
+}
+
+.my-btn{
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    font-size: 18px;
+    letter-spacing: 5px;
+    transition: all .5s ease;
+    text-align: center;
+}
+.my-btn:hover{
+    transform: scale(1.05);
+    transition: all .5s ease;
+}
+
+.black-btn{
+    background: black;
+    color: white;
+    transition: all .5s ease;
+}
+.black-btn:hover{
+    border: 1px solid black;
+    background: white;
+    color: black;
+    transition: all .5s ease;
+}
+
+.white-btn{
+    color: #F06233;
+    background: white;
+    border: #F06233 1px solid;
+    transition: all .5s ease;
+}
+.white-btn:hover{
+    background: #F06233;
+    color: white;
+    transition: all .5s ease;
+}
+
+.only-white-btn{
+    color: black;
+    background: white;
+    border: none;
+    transition: all .5s ease;
+}
+.only-white-btn:hover{
+    transform: scale(1.05);
+    transition: all .5s ease;
+}
+
+.colored-btn{
+    background: #F06233;
+    color: white;
+    border: 1px solid #F06233;
+    display: inline-block;
+    transition: all .5s ease;
+}
+.colored-btn:hover{
+    background: white;
+    transform: scale(1.05);
+    color: #F06233;
+    transition: all .5s ease;
+}
+
+
+.slick-slide{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.big-text{
+    width: 100%;
+    font-size: 90px;
+    font-weight: bold;
+    color: #F06233;
+    position: relative;
+    height: fit-content;
+    text-transform: uppercase;
+}
+.big-text p{
+    opacity: .2;
+}
+.small-text{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    font-size: 30px;
+    opacity: 1 !important;
+    color: black;
+    text-transform: uppercase;
+}
+.small-text .colored-span{
+    color: #F06233;
+}
+
+.small-title{
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+.small-title .colored-span{
+    color: #F06233;
+}
+
+.about-section{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 75%;
+}
+.about-carousel{
+    height: 100px;
+}
+.about-carousel img{
+    height: 50px;
+}
+.about-card{
+    width: 49%;
+    height: 150px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20px;
+}
+.about-card span:nth-child(1){
+    font-size: 23px;
+    font-weight: bold;
+}
+.hr{
+    width: 50%;
+    border: 1px solid gray;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 50px 0;
+}
+.skills-section{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 75%;
+}
+.skill{
+    width: 23%;
+    margin: 15px 0;
+}
+.progress-bar{
+    height: 16px;
+    border: 1px solid black;
+}
+.progress-bar-inner{
+    background: black;
+    height: 100%;
+}
+.experience-left div{
+    position: relative;
+    display: flex;
+    height: 40px !important;
+    width: 40px !important;
+    border-radius: 50%;
+    background: black;
+    color: white;
+}
+.experience-left svg{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.experience-right{
+    padding: 0 20px;
+}
+
+.services-section{
+    width: 100%;
+    background: #F06233;
+}
+.service-card{
+    width: 32%;
+    background: white;
+    position: relative;
+    margin-top: 20px;
+}
+.service-details{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    text-align: center;
+    padding: 0 15px;
+    opacity: 0;
+    transition: all .5s ease;
+}
+.service-details.portfolio-details{
+    background: rgba(0, 0, 0, .7);
+    color: white;
+}
+.service-card:hover .service-details{
+    opacity: 1;
+    transition: all .5s ease;
+}
+.portfolio-links{
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+.portfolio-links button{
+    padding: 0 8px;
+}
+
+.pricing-section{
+    background: rgb(248, 248, 248);
+    padding: 30px 0;
+}
+
+.pricing-card{
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.pricing-card img{
+    max-width: 300px;
+    max-height: 300px;
+}
+.pricing-card svg{
+    font-size: 90px;
+    color: #F06233;
+}
+.pricing-card h6{
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 15px 0;
+}
+.pricing-card .original-price{
+    text-decoration: line-through;
+}
+.pricing-card .cut-price{
+    color: #F06233;
+}
+.pricing-card .original-price,
+.pricing-card .cut-price{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.blogs-card{
+    width: 32%;
+    background: white;
+}
+.blogs-card img{
+    width: 100%;
+    aspect-ratio: 3/2;
+}
+.blogs-card .blog-title h5{
+    font-weight: bolder;
+}
+.blogs-card p{
+    line-height: 20px;
+}
+
+.subscribe-form{
+    width: 75%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.subscribe-form input{
+    height: 45px;
+    width: 75%;
+    padding-left: 15px;
+    border: 1px solid gray;
+}
+.subscribe-form button{
+    height: 45px;
+    background: #F06233;
+    color: white;
+}
+
+.contact-left{
+    width: 40%;
+    display: flex;
+    height: fit-content;
+}
+.contact-left svg{
+    font-size: 50px;
+    color: #F06233;
+}
+.contact-left .social-buttons svg{
+    font-size: 20px;
+    color: white;
+}
+.contact-details{
+    padding-left: 20px;
+}
+.contact-right{
+    width: 60%;
+}
+.contact-right input{
+    height: 50px;
+}
+.contact-right input,
+.contact-right textarea,
+.contact-right select{
+    background: white;
+    padding: 0 15px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid rgb(223, 220, 220);
+    outline: none;
+}
+
+.testimonial-left{
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.35);
+    width: 32%;
+    height: 450px;
+}
+.testimonial-left .w-100{
+    max-height: 60%;
+}
+.testimonial-middle{
+    height: 450px;
+    width: 6%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.testimonial-middle .line{
+    height: 2px;
+    width: 100%;
+    background: #F06233;
+}
+.testimonial-right{
+    width: 62%;
+    height: 450px;
+}
+.testimonial-right-top{
+    height: 25%;
+}
+.testimonial-right-top img{
+    height: 100%;
+    opacity: .5;
+}
+.testimonial-right-bottom{
+    height: 75%;
+    width: 100%;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.35);
+}
+.rating-stars{
+    height: fit-content;
+    width: fit-content;
+    padding: 8px;
+    margin: auto 0;
+    margin-right: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.35);
+}
+.rating-stars span{
+    color: #F06233;
+}
+.single-slider{
+    padding: 20px;
+}
+.testimonial-buttons{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    z-index: 2;
+}
+.testimonial-buttons button{
+    width: 60px;
+    height: 60px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,.35);
+    margin: 0 10px;
+    font-size: 30px;
+    color: #F06233;
+}
+.testimonial-buttons button svg{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.hire-me-add{
+    background: #F8F8F8;
+    padding: 20px 0;
+    border: 1px solid rgb(180, 178, 178);
+}
+.hire-me-add img{
+    height: 100px;
+    width: 100px;
+}
+.pricing-icon{
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}
+
+@media (max-width: 991px){
+    .colored-text{
+        margin-left: 10px;
+        border-bottom: 4px solid #F06233;
+    }
+    
+    .page-title div{
+        font-size: 8vw;
+    }
+
+    .homepage-intro{
+        width: 95%;
+        flex-direction: column;
+    }
+    .intro-image{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .homepage-intro img{
+        width: 50%;
+    }
+    .homepage-intro p{
+        width: 100%;
+        padding: 15px 0 0 0;
+        font-size: 16px;
+    }
+
+    .intro-btns{
+        flex-wrap: wrap;
+    }
+    
+    .my-btn{
+        padding: 6px 10px;
+        font-size: 14px;
+        width: 100%;
+    }
+    
+    .big-text p{
+        display: none;
+    }
+    .small-text{
+        position: relative;
+        bottom: 0;
+        margin: 40px 0;
+    }
+    
+    .small-title{
+        font-size: 30px;
+        color: black;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+
+    .small-title .colored-span{
+        color: #F06233;
+    }
+
+    .about-section{
+        width: 100%;
+    }
+    
+    .about-card{
+        width: 100%;
+        height: 130px;
+    }
+    .about-card span:nth-child(1){
+        font-size: 23px;
+        font-weight: bold;
+    }
+    .skills-section{
+        width: 100%;
+    }
+    .skill{
+        width: 48%;
+    }
+    .experience-right{
+        padding: 0 5px 0 10px;
+    }
+    
+    .service-card{
+        width: 100%;
+        background: white;
+        position: relative;
+        margin-top: 20px;
+    }
+    
+    .portfolio-links{
+        text-align: center;
+        font-size: 16px;
+    }
+    
+    
+    .blogs-card{
+        width: 100%;
+        margin: 6px 0;
+    }
+    
+    .subscribe-form{
+        width: 100%;
+    }
+    .subscribe-form input{
+        width: 100%;
+    }
+    .subscribe-form button{
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    
+    .contact-left{
+        width: 100%;
+    }
+    .contact-left .d-flex{
+        text-align: center;
+        display: block !important;
+    }
+    .contact-details{
+        padding: 15px 0;
+    }
+    .contact-right{
+        width: 100%;
+    }
+    .contact-right input{
+        height: 50px;
+    }
+    .contact-right input,
+    .contact-right textarea{
+        background: white;
+        padding-left: 15px;
+        margin: 10px 0;
+        width: 100%;
+        border: 1px solid rgb(223, 220, 220);
+        outline: none;
+    }
+
+    
+    .testimonial-left{
+        width: 100%;
+    }
+    .testimonial-middle{
+        height: 30px;
+        width: 100%;
+    }
+    .testimonial-middle .line{
+        height: 100%;
+        width: 2px;
+    }
+    .testimonial-right{
+        height: 400px;
+        width: 100%;
+    }
+    .testimonial-right-top{
+        display: none;
+    }
+    .testimonial-right-bottom{
+        height: 100%;
+    }
+    .rating-stars{
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+
+
+    
+    .single-slider{
+        padding: 10px;
+    }
+    .testimonial-buttons{
+        top: calc(50% + 25px);
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    /* .testimonial-buttons button{
+        background: white;
+    } */
+}

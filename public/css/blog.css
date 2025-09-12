@@ -1,0 +1,72 @@
+.author img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.blog-date svg{
+    color: #F06233;
+    font-size: 50px;
+}
+
+.products-others-right a{
+    background: red;
+    color: white;
+    font-size: 16px;
+    margin-right: 10px;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+.products-others-right a svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.blog-count{
+    font-weight: bolder;
+    font-size: 18px;
+}
+.blog-count svg{
+    padding: 0;
+    padding-right: 5px;
+    font-size: 30px;
+    margin: 0;
+}
+
+.blog-arrow .arrow-icon{
+    height: 50px;
+    width: 50px;
+    position: relative;
+}
+.blog-arrow .arrow-icon svg{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+}
+
+.blog-page-card{
+    box-shadow: 0 5px 15px rgba(0,0,0,.35);
+}
+
+.full-blog pre{
+    background: black;
+    padding: 15px;
+    color: white;
+}
+
+
+@media (max-width: 991px){
+    .blog-details{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+    .blog-details .author{
+        width: 100%;
+        margin: 10px 0;
+    }
+}
