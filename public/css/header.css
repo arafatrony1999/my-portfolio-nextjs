@@ -161,7 +161,7 @@ body{
         padding: 10px;
     }
     .header-search{
-        display: none;
+        display: none !important;
     }
     .header-search input{
         padding-left: 10px;

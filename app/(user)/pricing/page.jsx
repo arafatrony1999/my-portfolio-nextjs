@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import HireMeAdd from "../components/HireMeAdd";
 import PricingSection from "../components/PricingSection";
+import PricingSkeleton from "../components/PricingSkeleton";
 
 const Pricing = async () => {
     return (
@@ -8,7 +10,9 @@ const Pricing = async () => {
                 <HireMeAdd />
             </div>
 
-            <PricingSection />
+            <Suspense fallback={ <PricingSkeleton /> }>
+                <PricingSection />
+            </Suspense>
         </>
     )
 }

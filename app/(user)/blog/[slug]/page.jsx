@@ -1,43 +1,60 @@
-import BlogArrow from "../../components/BlogArrow";
-import BlogComments from "../../components/BlogComments";
-// import BlogComments from "../../components/BlogComments";
-import BlogRight from "../../components/BlogRight";
+import { Suspense } from "react";
 import ContactSection from "../../components/ContactSection";
-import FullBlog from "../../components/FullBlog";
 import HireMeAdd from "../../components/HireMeAdd";
-import Share from "../../components/Share";
 import SubscriberSection from "../../components/SubscriberSection";
+import BlogSkeleton from "../../components/BlogSkeleton";
+import Blog from "./Blog";
+ 
+export async function generateMetadata({ params }) {
+    const slug = (await params).slug
+    
+    // fetch post information
+    const getPost = await fetch(`https://portfolioapi.arafatrony.com/api/blog?slug=${slug}`)
+    .then((res) =>
+        res.json()
+    )
+
+    const post = getPost[0];
+    
+    return {
+        title: post.title,
+        description: post.meta_description,
+        openGraph: {
+            title: post.title,
+            description: post.meta_description,
+            url: `https://arafatrony.com/blog/${slug}`,
+            type: "article",
+            images: [
+                {
+                    url: post.image, // dynamically fetched OG image
+                    width: 1200,
+                    height: 630,
+                    alt: post.title,
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: post.title,
+            description: post.meta_description,
+            images: [post.image],
+        },
+    };
+}
 
 const SingleBlog = async (props) => {
-
-    const res = await fetch('https://portfolioapi.arafatrony.com/api/getCategories', {cache: 'default'});
-    const categories = await res.json();
-
+    
     const params = await props.params;
     const slug = await params.slug;
-    const response = await fetch(`https://portfolioapi.arafatrony.com/api/blog?slug=${slug}`, {cache: 'default'});
-    const blogs = await response.json();
-    const blog = blogs[0];
-
-    const res2 = await fetch('https://portfolioapi.arafatrony.com/api/getBlogs', {cache: 'default'});
-    const all_blogs = await res2.json();
 
     return (
         <div className='container-fluid'>
             <div className="container">
                 <HireMeAdd />
 
-                <div className="row">
-                    <div className="col-12 col-md-8">
-                        <FullBlog blog={blog} />
-                        <Share />
-                        <BlogArrow blogs={all_blogs} currentBlog={blog} />
-                        { blog && <BlogComments singleBlog={blog} />}
-                    </div>
-                    <div className="col-12 col-md-4">
-                        <BlogRight categories={categories} blogs={all_blogs} />
-                    </div>
-                </div>
+                <Suspense fallback={<BlogSkeleton />}>
+                    <Blog slug={slug} />
+                </Suspense>
             </div>
 
             <SubscriberSection />

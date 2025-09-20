@@ -1,14 +1,10 @@
+import { Suspense } from "react";
 import BigText from "../components/BigText";
-import ClientSingleBlogSection from "../components/ClientSingleBlogSection";
 import HireMeAdd from "../components/HireMeAdd";
+import BlogsFetch from "./Blogs";
+import BlogsSkeleton from "../components/BlogsSkeleton";
 
 const Blogs = async (props) => {
-
-    const res = await fetch('https://portfolioapi.arafatrony.com/api/getCategories', {cache: 'default'});
-    const categories = await res.json();
-    
-    const response = await fetch('https://portfolioapi.arafatrony.com/api/getBlogs', {cache: 'default'});
-    const blogs = await response.json();
 
     return (
         <>
@@ -17,7 +13,9 @@ const Blogs = async (props) => {
                 
                 <BigText big='ARTICLES' normal='NEW BLOGS &' colored='INSIGHTS' />
 
-                <ClientSingleBlogSection name={props.name} type={props.type} categories={categories} blogs={blogs} />
+                <Suspense fallback={<BlogsSkeleton />}>
+                    <BlogsFetch name={props.name} type={props.type} />
+                </Suspense>
             </div>
         </>
     )

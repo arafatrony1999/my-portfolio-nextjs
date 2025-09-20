@@ -15,7 +15,10 @@ import SmallTitle from './components/SmallTitle';
 import SubscriberSection from './components/SubscriberSection';
 import TestimonialSection from './components/TestimonialSection';
 import AboutSection from './components/AboutSection';
-import AboutCarousel from './components/AboutCarousel';
+// import AboutCarousel from './components/AboutCarousel';
+import { Suspense } from 'react';
+import LoadingSkeleton from './components/LoadingSkeleton';
+import SkillSkeleton from './components/SkillSkeleton';
 
 
 export default function Home() {
@@ -23,28 +26,32 @@ export default function Home() {
     <div className='homepage'>
       <PageTitle />
       <HomepageIntro />
-      <IntroCarousel />
-      <IntroBtns />
-      {/* <AboutCarousel /> */}
-      <BigText big='ABOUT' normal='ABOUT' colored='ME' />
-      <AboutSection />
-      <Hr />
-      <div className="w-100 d-flex justify-content-center px-2">
-          <a target='_blank' rel='noreferrer' href="/" className="inline-block my-btn colored-btn my-5 mx-auto text-center">download resume</a>
-      </div>
-      <Hr />
-      <SmallTitle normal='MY' colored='SKILLS' />
-      <SkillsSection />
-      <Hr />
-      <SmallTitle normal='Experience &' colored='Education' />
-      <Experience />
-      <ServicesSection />
-      <PortfolioSection />
-      <PricingSection />
-      <TestimonialSection />
-      <BlogsSection />
-      <SubscriberSection />
-      <ContactSection />
+      <Suspense fallback={<LoadingSkeleton />}>
+        <IntroCarousel />
+        <IntroBtns />
+        {/* <AboutCarousel /> */}
+        <BigText big='ABOUT' normal='ABOUT' colored='ME' />
+        <AboutSection />
+        <Hr />
+        <div className="w-100 d-flex justify-content-center px-2">
+            <a target='_blank' rel='noreferrer' href="/" className="inline-block my-btn colored-btn my-5 mx-auto text-center">download resume</a>
+        </div>
+        <Hr />
+        <SmallTitle normal='MY' colored='SKILLS' />
+        <Suspense fallback={<SkillSkeleton />}>
+          <SkillsSection />
+        </Suspense>
+        <Hr />
+        <SmallTitle normal='Experience &' colored='Education' />
+        <Experience />
+        <ServicesSection />
+        <PortfolioSection />
+        <PricingSection />
+        <TestimonialSection />
+        <BlogsSection />
+        <SubscriberSection />
+        <ContactSection />
+      </Suspense>
     </div>
   );
 }

@@ -34,7 +34,7 @@ const FullBlog = (props) => {
                         </div>
                     </div>
         
-                    <img className='img-fluid' src={props.blog.image} alt="" />
+                    <img className='img-fluid' src={props.blog.image} alt={props.blog.title} />
         
                     <div className="social-buttons my-4">
                         <div className="products-others-right">

@@ -10,7 +10,7 @@ const PortfolioRight = async () => {
 
     return (
         <div className='w-100'>
-            <input type="text" placeholder='Search...' className='w-100 mb-5' />
+            <input type="text" placeholder='Search...' className='w-100 mb-5 right-search-input' />
 
             <div className="bg-dark text-white p-3 py-2">Categories</div>
 

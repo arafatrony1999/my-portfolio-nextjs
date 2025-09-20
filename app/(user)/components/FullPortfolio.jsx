@@ -14,8 +14,8 @@ const FullPortfolio = (props) => {
                 </div>
 
                 <div className="d-flex">
-                    <a href={props.portfolio.link} target="_blank" rel="noopener noreferrer" className='px-3 py-2 btn-outline-black'>Visit Website</a>
-                    <a href={props.portfolio.github} target="_blank" rel="noopener noreferrer" className='px-3 py-2 btn-outline-black' style={{marginLeft: '15px'}}>View in Github</a>
+                    <a href={props.portfolio.link} target="_blank" rel="noopener noreferrer" className='px-3 py-2 btn btn-outline-black'>Visit Website</a>
+                    <a href={props.portfolio.github} target="_blank" rel="noopener noreferrer" className='px-3 py-2 btn btn-outline-black' style={{marginLeft: '15px'}}>View in Github</a>
                 </div>
             </div>
         )

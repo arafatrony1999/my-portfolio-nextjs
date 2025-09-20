@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import GetServicePage from "../components/GetServicePage";
 import HireMeAdd from "../components/HireMeAdd";
 import ServicesSection from "../components/ServicesSection";
+import ServiceSkeleton from "../components/ServiceSkeleton";
 
 const Services = async () => {
     return (
@@ -9,9 +11,11 @@ const Services = async () => {
                 <HireMeAdd />
             </div>
 
-            <ServicesSection />
+            <Suspense fallback={<ServiceSkeleton />}>
+                <ServicesSection />
 
-            <GetServicePage />
+                <GetServicePage />
+            </Suspense>
         </>
     )
 }

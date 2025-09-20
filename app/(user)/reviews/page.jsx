@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import HireMeAdd from "../components/HireMeAdd";
 import TestimonialSection from "../components/TestimonialSection";
+import TestemonialSkeleton from "../components/TestemonialSkeleton";
 
 const Reviews = async () => {
     return (
@@ -8,7 +10,10 @@ const Reviews = async () => {
                 <HireMeAdd />
             </div>
 
-            <TestimonialSection />
+            <Suspense fallback={<TestemonialSkeleton />}>
+                <TestimonialSection />
+            </Suspense>
+            
         </>
     )
 }

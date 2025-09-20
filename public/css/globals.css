@@ -14,9 +14,19 @@ button{
   border: none;
   background: none;
 }
+.btn-outline-black, .btn-outline-black:hover{
+  border: 1px solid black;
+  color: black;
+  border-radius: 0px;
+}
 
 input{
   outline: none !important;
+}
+
+.right-search-input{
+  border: 1px solid gray;
+  padding: 10px;
 }
 
 @theme inline {
@@ -46,4 +56,14 @@ body {
 }
 .slick-arrow{
   display: none !important;
+}
+.placeholder-glow {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite linear;
+}
+
+@keyframes loading {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
