@@ -11,6 +11,11 @@ import Footer from "./components/Footer";
 import { ToastContainer } from "react-toastify";
 import formal from "@/public/images/formal.jpg"
 
+const dosis = Dosis({
+  variable: "--font-dosis",
+  subsets: ["latin"],
+});
+
 export const metadata = {
   metadataBase: new URL("https://arafatrony.com"),
   title: {
@@ -71,11 +76,6 @@ export const metadata = {
     canonical: "https://arafatrony.com",
   },
 };
-
-const dosis = Dosis({
-  variable: "--font-dosis",
-  subsets: ["latin"],
-});
 
 export default function RootLayout({ children }) {
   return (
