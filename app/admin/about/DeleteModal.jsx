@@ -14,9 +14,13 @@ const DeleteModal = (props) => {
         
         fetch(`https://portfolioapi.arafatrony.com/api/deleteAbout?id=${id}`)
         .then((res) => {
-            if(res.data === 1){
+            return res.json();
+        })
+        .then((data) => {
+            if(data === 1){
                 onDeleteSuccess()
             }
+            
             setBtnText('Delete')
             setLoading(false)
         })

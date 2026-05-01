@@ -10,8 +10,6 @@ const AboutPage = () => {
     const { loadingAbout, filteredAbout, getAbout, setFilteredAbout } = useAboutContext();
     const [deleteModalShow, setDeleteModalShow] = useState(false);
 
-    const [description, setDescription] = useState('');
-
     const [sendDeleteId, setSendDeleteId] = useState('')
     const [search, setSearch] = useState('')
     
@@ -48,7 +46,7 @@ const AboutPage = () => {
         {
             name: 'Action',
             cell: row => <>
-                <Link href={'edit?id='+row.id} className='btn btn-primary'>
+                <Link href={'/admin/about/edit?id='+row.id} className='btn btn-primary'>
                     <FaEdit />
                 </Link>
                 <button onClick={() => deleteModal(row.id)} className='btn btn-danger mx-2'>
@@ -77,7 +75,7 @@ const AboutPage = () => {
                         <input type='search' value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Search' className='w-25 form-group' />
                     }
                     actions={
-                        <Link href='add' className='btn btn-primary'>ADD NEW ABOUT</Link>
+                        <Link href='about/add' className='btn btn-primary'>ADD NEW ABOUT</Link>
                     }
                 />
             </div>

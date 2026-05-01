@@ -76,7 +76,7 @@ export default function ClientTestemonialsSection(props) {
                                                         </p>
                                                     </div>
                                                     <div className="rounded col-12 col-md-4 rating-stars">
-                                                        <Rating name="half-rating-read" defaultValue={parseFloat(testimonial.rating)} precision={0.5} readOnly />
+                                                        <Rating name="half-rating-read" value={testimonial ? parseFloat(testimonial.rating) : 0} precision={0.5} readOnly />
                                                     </div>
                                                 </div>
             

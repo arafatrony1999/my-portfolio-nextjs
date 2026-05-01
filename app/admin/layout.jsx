@@ -4,11 +4,8 @@ import "@/public/css/bootstrap.min.css";
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import './assets/css/header.css'
 import './assets/css/admin.css'
-import Header from './Header'
-import Sidebar from './Sidebar'
-import Login from './components/Login';
 import { AboutProvider } from '@/context/AboutContext'
-import { AdminProvider, useAdminContext } from '@/context/AdminContext';
+import { AdminProvider } from '@/context/AdminContext';
 import { PortfolioProvider } from '@/context/PortfolioContext';
 import { CategoryProvider } from '@/context/CategoryContext';
 import { SkillProvider } from '@/context/SkillContext';
@@ -20,23 +17,22 @@ import { PricingProvider } from '@/context/PricingContext';
 import { ExperienceProvider } from '@/context/ExperienceContext';
 import { SubscriberProvider } from '@/context/SubscriberContext';
 
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import Base from "./Base";
+
 const dosis = Dosis({
   variable: "--font-dosis",
   subsets: ["latin"],
 });
 
 export default function RootLayout({ children }) {
-    // const { authentication, loading } = useAdminContext()
-    // const loading = false;
-    // const authentication = true;
-
-    // if(loading){
-    //     return <h1>Loading...</h1>
-    // }
 
   return (
     <html lang="en">
       <body className={`${dosis.variable} antialiased`} >
+        <ToastContainer />
+        
         <AdminProvider>
           <PortfolioProvider>
             <CategoryProvider>
@@ -49,20 +45,7 @@ export default function RootLayout({ children }) {
                           <ExperienceProvider>
                             <AboutProvider>
                               <SubscriberProvider>
-                                {/* {authentication ? <div className='fixed'>
-                                    <Header />
-                                    <div className="main-body">
-                                        <Sidebar />
-                                        {children}
-                                    </div>
-                                </div> : <Login />} */}
-                                <div className='fixed'>
-                                    <Header />
-                                    <div className="main-body">
-                                        <Sidebar />
-                                        {children}
-                                    </div>
-                                </div> 
+                                <Base children={children} />
                               </SubscriberProvider>
                             </AboutProvider>
                           </ExperienceProvider>
