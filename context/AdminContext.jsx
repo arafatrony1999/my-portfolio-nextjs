@@ -16,8 +16,8 @@ const AdminProvider = ( {children} ) => {
 
     const [menuOpen, setMenuOpen] = useState(false)
     
-    let data = localStorage.getItem('admin')
-    // let data = {"0":{"id":1,"name":"Admin","user":"admin","auth":"d41d8cd98f00b204e9800998ecf8427e"},"length":1}
+    // let data = localStorage.getItem('admin')
+    let data = {"0":{"id":1,"name":"Admin","user":"admin","auth":"d41d8cd98f00b204e9800998ecf8427e"},"length":1}
 
     const getAdmin = async (auth) => {
         const formData = new FormData()
@@ -36,11 +36,11 @@ const AdminProvider = ( {children} ) => {
     }
 
     const getUser = () => {
-        dispatch({type: 'INITIAL_STATE'})
+        // dispatch({type: 'INITIAL_STATE'})
 
         if(data){
-            let authFound = JSON.parse(data)
-            // let authFound = data
+            // let authFound = JSON.parse(data)
+            let authFound = data
             if(authFound[0].auth){
                 getAdmin(authFound[0].auth)
             }else{
@@ -64,7 +64,7 @@ const AdminProvider = ( {children} ) => {
                 dispatch({type: 'WRONG_CREDENTIAL'})
             }else{
                 if(isChecked){
-                    localStorage.setItem('admin', JSON.stringify(res.data))
+                    // localStorage.setItem('admin', JSON.stringify(res.data))
                 }
                 dispatch({type: 'API_DATA', payload: res.data})
             }
@@ -83,7 +83,7 @@ const AdminProvider = ( {children} ) => {
     }
 
     const logout = () => {
-        localStorage.removeItem('admin')
+        // localStorage.removeItem('admin')
 
         dispatch({type: 'LOGOUT'})
     }
