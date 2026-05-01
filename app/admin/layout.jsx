@@ -45,7 +45,21 @@ export default function RootLayout({ children }) {
                           <ExperienceProvider>
                             <AboutProvider>
                               <SubscriberProvider>
-                                <Base children={children} />
+
+                                {/* <div className='fixed'>
+                                  <Header />
+                                  <div className="main-body">
+                                      <Sidebar />
+                                      <div className="main-body-container">
+                                          {children}
+                                      </div>
+                                  </div>
+                                </div> */}
+
+                                <Base>
+                                  {children}
+                                </Base>
+
                               </SubscriberProvider>
                             </AboutProvider>
                           </ExperienceProvider>

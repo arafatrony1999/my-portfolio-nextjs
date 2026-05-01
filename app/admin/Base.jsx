@@ -5,10 +5,10 @@ import './assets/css/header.css'
 import './assets/css/admin.css'
 import Header from './Header'
 import Sidebar from './Sidebar'
-import { useAdminContext } from '@/context/AdminContext'
+import { useAdminContext } from "@/context/AdminContext";
 import Login from "./components/Login";
 
-export default function Base(props) {
+export default function Base({ children }) {
     const { authentication, loading } = useAdminContext()
 
     if(loading){
@@ -20,9 +20,7 @@ export default function Base(props) {
             <Header />
             <div className="main-body">
                 <Sidebar />
-                <div className="main-body-container">
-                    {props.children}
-                </div>
+                .{children}
             </div>
         </div> : <Login />
     )

@@ -17,7 +17,7 @@ const AdminProvider = ( {children} ) => {
     const [menuOpen, setMenuOpen] = useState(false)
     
     // let data = localStorage.getItem('admin')
-    let data = {"0":{"id":1,"name":"Admin","user":"admin","auth":"d41d8cd98f00b204e9800998ecf8427e"},"length":1}
+    // let data = {"0":{"id":1,"name":"Admin","user":"admin","auth":"d41d8cd98f00b204e9800998ecf8427e"},"length":1}
 
     const getAdmin = async (auth) => {
         const formData = new FormData()
@@ -25,7 +25,8 @@ const AdminProvider = ( {children} ) => {
         await axios.post('/getAdmin', formData)
         .then((res) => {
             if(res.data === 1){
-                dispatch({type: 'API_DATA', payload: JSON.parse(data)})
+                const stored = localStorage.getItem('admin');
+                dispatch({ type: 'API_DATA', payload: JSON.parse(stored) });
             }else{
                 logout()
             }
@@ -36,20 +37,24 @@ const AdminProvider = ( {children} ) => {
     }
 
     const getUser = () => {
-        // dispatch({type: 'INITIAL_STATE'})
+        dispatch({ type: 'INITIAL_STATE' });
 
-        if(data){
-            // let authFound = JSON.parse(data)
-            let authFound = data
-            if(authFound[0].auth){
-                getAdmin(authFound[0].auth)
-            }else{
-                logout()
+        if (typeof window !== "undefined") {
+            const data = localStorage.getItem('admin') || sessionStorage.getItem('admin');
+
+            if (data) {
+                let authFound = JSON.parse(data);
+
+                if (authFound[0]?.auth) {
+                    getAdmin(authFound[0].auth);
+                } else {
+                    logout();
+                }
+            } else {
+                dispatch({ type: 'NO_USER_FOUND' });
             }
-        }else{
-            dispatch({type: 'NO_USER_FOUND'})
         }
-    }
+    };
 
     const login = (user, password, isChecked) => {
         dispatch({type: 'INITIAL_STATE'})
@@ -63,9 +68,12 @@ const AdminProvider = ( {children} ) => {
             if(res.data === 0){
                 dispatch({type: 'WRONG_CREDENTIAL'})
             }else{
-                if(isChecked){
-                    // localStorage.setItem('admin', JSON.stringify(res.data))
+                if (isChecked) {
+                    localStorage.setItem('admin', JSON.stringify(res.data));
+                } else {
+                    sessionStorage.setItem('admin', JSON.stringify(res.data));
                 }
+
                 dispatch({type: 'API_DATA', payload: res.data})
             }
         })
@@ -81,12 +89,13 @@ const AdminProvider = ( {children} ) => {
     const removeSidebar = () => {
         setMenuOpen(false)
     }
-
+    
     const logout = () => {
-        // localStorage.removeItem('admin')
+        localStorage.removeItem('admin');
+        sessionStorage.removeItem('admin');
 
-        dispatch({type: 'LOGOUT'})
-    }
+        dispatch({ type: 'LOGOUT' });
+    };
 
     useEffect(() => {
         getUser()
