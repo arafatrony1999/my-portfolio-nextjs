@@ -20,7 +20,7 @@ export default function Base({ children }) {
             <Header />
             <div className="main-body">
                 <Sidebar />
-                .{children}
+                {children}
             </div>
         </div> : <Login />
     )

@@ -1,0 +1,52 @@
+.ProseMirror {
+  outline: none;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.ProseMirror p {
+  margin: 0.6rem 0;
+}
+
+.ProseMirror h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0.8rem 0;
+}
+
+.ProseMirror h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.ProseMirror ul {
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.ProseMirror ol {
+  padding-left: 1.5rem;
+  list-style: decimal;
+}
+
+.ProseMirror blockquote {
+  border-left: 3px solid #ccc;
+  padding-left: 10px;
+  color: #666;
+}
+
+.ProseMirror table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.ProseMirror td,
+.ProseMirror th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.ProseMirror th {
+  background: #f3f4f6;
+}
