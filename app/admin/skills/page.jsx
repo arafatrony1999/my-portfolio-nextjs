@@ -1,13 +1,15 @@
-'use client'
+"use client"
+
 import React, { useEffect, useState } from 'react'
 import DataTable from 'react-data-table-component'
-import { usePortfolioContext } from '@/context/PortfolioContext'
 import DeleteModal from './DeleteModal'
+import { toast } from 'react-toastify'
+import { useSkillContext } from '@/context/SkillContext'
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Link from 'next/link'
 
-const Portfolios = () => {
-    const { loading, filteredPortfolios, getPortfolios, setFilteredPortfolios } = usePortfolioContext();
+const Skills = () => {
+    const { loading, filteredSkills, getSkills, setFilteredSkills } = useSkillContext();
 
     const [deleteModalShow, setDeleteModalShow] = useState(false);
 
@@ -20,39 +22,41 @@ const Portfolios = () => {
     }
     
     const onDeleteSuccess = () => {
-        getPortfolios()
+        getSkills()
         setDeleteModalShow(false)
+
+        toast.success('Skill deleted successfully!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+        });
     }
 
     useEffect(() => {
-        setFilteredPortfolios(search)
+        setFilteredSkills(search)
         //eslint-disable-next-line
     }, [search])
     
     const columns = [
-        {
-            name: 'Image',
-            selector: row => <img style={{width: '50px'}} src={row.image} alt="" />
-        },
         {
             name: 'Name',
             selector: row => row.name,
             sortable: true
         },
         {
-            name: 'Link',
-            selector: row => <a href={row.link} target='_blank' rel='noreferrer'>{row.link}</a>,
-            sortable: true
-        },
-        {
-            name: 'Category',
-            selector: row => row.categories.name,
+            name: 'Skill Percent',
+            selector: row => row.percent,
             sortable: true
         },
         {
             name: 'Action',
             cell: row => <>
-                <Link href={'/admin/portfolios/edit?id='+row.id} className='btn btn-primary'>
+                <Link href={'/admin/skills/edit?id='+row.id} className='btn btn-primary'>
                     <FaEdit />
                 </Link>
                 <button onClick={() => deleteModal(row.id)} className='btn btn-danger mx-2'>
@@ -68,10 +72,10 @@ const Portfolios = () => {
             <div className='page-container'>
                 <DataTable
                     columns={columns}
-                    data={filteredPortfolios}
+                    data={filteredSkills}
                     pagination
                     progressPending={loading && 'Loading...'}
-                    title='Portfolios'
+                    title='Skills'
                     fixedHeader
                     fixedHeaderScrollHeight='75%'
                     selectableRows
@@ -82,7 +86,7 @@ const Portfolios = () => {
                         <input type='search' value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Search' className='w-25 form-group' />
                     }
                     actions={
-                        <Link href='/admin/portfolios/add' className='btn btn-primary'>ADD NEW PORTFOLIO</Link>
+                        <Link href='/admin/skills/add' className='btn btn-primary'>ADD NEW SKILL</Link>
                     }
                 />
             </div>
@@ -98,4 +102,4 @@ const Portfolios = () => {
     )
 }
 
-export default Portfolios
+export default Skills
