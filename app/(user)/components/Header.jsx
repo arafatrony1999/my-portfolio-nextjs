@@ -21,8 +21,8 @@ export default function Header() {
     return(
         <>
             <div className='front-header'>
-                <Image height={40} width={40} className="py-3 responsive-logo img-fluid" src="/images/formal.jpg" alt="Arafat Rony" />
-                <Image height={100} width={180} className='main-logo' src="/images/logo.png" alt="Arafat Rony" />
+                <Image height={40} width={40} className="py-3 responsive-logo img-fluid" src="/images/formal.jpg" loading="eager" alt="Arafat Rony" />
+                <Image height={100} width={180} className='main-logo' src="/images/logo.png" loading="eager" alt="Arafat Rony" />
 
                 <div className="menu-bar-icon" onClick={handleClick}>
                     <FaBars />

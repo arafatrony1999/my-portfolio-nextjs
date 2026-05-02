@@ -17,7 +17,7 @@ const PortfolioSection = async () => {
             
             <ClientPortfolioSection categories={categories} portfolios={portfolios} />
 
-            <div className="text-center my-5 w-100">
+            <div className="text-center my-5 mx-3">
                 <ColoredBtn btnLink='projects' btnText='GO TO ALL'  />
             </div>
         </>

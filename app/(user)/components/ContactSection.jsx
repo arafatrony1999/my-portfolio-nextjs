@@ -85,21 +85,21 @@ const ContactSection = () => {
 
             <div className="container skills-section">
                 <div className="contact-left d-flex flex-wrap">
-                    <div className="py-3 w-100 d-flex">
+                    <div className="py-3 w-100 d-flex xxxxxxx">
                         <FaMapMarkerAlt />
                         <div className="contact-details">
                             <h4>Address</h4>
                             <p>43/3 Lalbagh, Dhaka 1205</p>
                         </div>
                     </div>
-                    <div className="py-3 w-100 d-flex">
+                    <div className="py-3 w-100 d-flex xxxxxxx">
                         <FaRegEnvelope />
                         <div className="contact-details">
                             <h4>Email</h4>
                             <p>arafat.rony1999@gmail.com</p>
                         </div>
                     </div>
-                    <div className="py-3 w-100 d-flex">
+                    <div className="py-3 w-100 d-flex xxxxxxx">
                         <FaPhoneAlt />
                         <div className="contact-details">
                             <h4>Phone</h4>

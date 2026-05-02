@@ -16,7 +16,7 @@ const PricingSection = async () => {
                         pricing.map((price, index) => {
                             return(
                                 <div key={index} className="service-card pricing-card">
-                                    <img className='py-3' src={price.icon} alt=''/>
+                                    <img className='py-3 m-auto' src={price.icon} alt=''/>
                                     <h6>For {price.title}</h6>
                                     <div dangerouslySetInnerHTML={{__html: price.description}} />
                                     {

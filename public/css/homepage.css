@@ -662,4 +662,8 @@
     /* .testimonial-buttons button{
         background: white;
     } */
+
+    .xxxxxxx svg{
+        margin: auto !important;
+    }
 }
